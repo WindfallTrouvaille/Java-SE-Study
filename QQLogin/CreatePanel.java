@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import javax.swing.plaf.DimensionUIResource;
+
 import java.awt.Font;
 
 import java.awt.Dimension;
@@ -105,9 +108,32 @@ public class CreatePanel {
         return panel;
     }
 
-    //顶部面部区域
+    //底部面部区域
     public static JPanel CreateSouthPanel(JFrame jf){
         JPanel panel = new JPanel();
+        panel.setPreferredSize(new Dimension(0,51));
+        panel.setLayout(null);
+        //创建左下角多人登录图表组件
+        JButton jble = new JButton(new ImageIcon("images/single_normal.jpg"));
+        jble.setPreferredSize(new DimensionUIResource(40, 40));
+        jble.setFocusPainted(false);
+        jble.setRolloverIcon(new ImageIcon("images/single_down.jpg"));
+        jble.setBorderPainted(false);
+        //设置不显示按钮区域
+        jble.setContentAreaFilled(false);
+        jble.setBounds(0,10,40,40);
+        jble.setToolTipText("多账号登录");
+        //创建底部中间登录图表组件
+        ImageIcon image = new ImageIcon("images/login_normal.jpg");
+        JButton jb = new JButton("登    录",image);
+        jb.setFont(new Font("宋体",0,13));
+        jb.setBounds(130, 0, 175, 40);
+        //将文字放在图像中间
+        jb.setHorizontalTextPosition(SwingConstants.CENTER);
+        jb.setFocusPainted(false);
+        jb.setContentAreaFilled(false);
+        jb.setRolloverIcon(new ImageIcon("images/right_normal.jpg"));\
+        //创建
         return panel;
     }
 
