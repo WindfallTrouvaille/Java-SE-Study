@@ -10,6 +10,11 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.DimensionUIResource;
+import java.awt.Color;
+
+// import org.graalvm.compiler.hotspot.nodes.DimensionsNode;
+
+// import jdk.internal.org.jline.utils.Colors;
 
 import java.awt.Font;
 
@@ -133,13 +138,38 @@ public class CreatePanel {
         jb.setFocusPainted(false);
         jb.setContentAreaFilled(false);
         jb.setRolloverIcon(new ImageIcon("images/right_normal.jpg"));\
-        //创建
+        //创建右下角二维码登录图表组件
+        JButton jbr1 = new JButton(new ImageIcon("images/right_normal.jpg"));
+        jbr1.setFocusPainted(false);
+        jbr1.setBorderPainted(false);
+        jbr1.setContentAreaFilled(false);
+        jbr1.setRolloverIcon(new ImageIcon("images/right_hover.jpg"));
+        jbr1.setToolTipText("二维码登录");
+        //将底部3个组件添加搭配顶部JPanel
+        panel.add(jble);
+        panel.add(jb);
+        panel.add(jbr1);
         return panel;
     }
 
     //右侧面部区域
     public static JPanel CreateEastPanel(JFrame jf){
+        //创建一个Jpanel左侧面板
         JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.setPreferredSize(new Dimension(100, 0));
+        //创建两个JLabel标签组件
+        JLabel regeist = new JLabel("注册账号");
+        regeist.setForeground(new Color(100,149,238));
+        regeist.setBounds(0, 13, 60, 30);
+        regeist.setFont(new Font("宋体",0,12));
+        //创建两个JPanel右侧面板
+        JLabel regentpwd = new JLabel("找回密码");
+        regentpwd.setForeground(new Color(100,149,238));
+        regentpwd.setBounds(0, 13, 60, 30);
+        regentpwd.setFont(new Font("宋体",0,12));
+        panel.add(regentpwd);
+        panel.add(regeist);
         return panel;
     }
 }
